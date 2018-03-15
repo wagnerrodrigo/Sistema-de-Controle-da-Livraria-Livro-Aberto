@@ -35,6 +35,8 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenuItem_Livros = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem_Sair = new javax.swing.JMenuItem();
+        jMenu1_Opcoes = new javax.swing.JMenu();
+        jMenuItem_Estoque = new javax.swing.JMenuItem();
         jMenu_Consulta = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -68,6 +70,13 @@ public class formPrincipal extends javax.swing.JFrame {
 
         jMenuItem_Sair.setText("Sair");
         jMenu_Cadastros.add(jMenuItem_Sair);
+
+        jMenu1_Opcoes.setText("Opçoes");
+
+        jMenuItem_Estoque.setText("Estoque");
+        jMenu1_Opcoes.add(jMenuItem_Estoque);
+
+        jMenu_Cadastros.add(jMenu1_Opcoes);
 
         jMenuBar1.add(jMenu_Cadastros);
 
@@ -123,8 +132,10 @@ public class formPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1_Opcoes;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem_Clientes;
+    private javax.swing.JMenuItem jMenuItem_Estoque;
     private javax.swing.JMenuItem jMenuItem_Livros;
     private javax.swing.JMenuItem jMenuItem_Sair;
     private javax.swing.JMenu jMenu_Cadastros;

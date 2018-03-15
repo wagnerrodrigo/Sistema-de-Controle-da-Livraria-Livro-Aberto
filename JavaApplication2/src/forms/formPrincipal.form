@@ -27,6 +27,18 @@
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
             </MenuItem>
+            <Menu class="javax.swing.JMenu" name="jMenu1_Opcoes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Op&#xe7;oes"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Estoque">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Estoque"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu_Consulta">
