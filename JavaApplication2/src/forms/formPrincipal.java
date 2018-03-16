@@ -32,12 +32,18 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu_Cadastros = new javax.swing.JMenu();
         jMenuItem_Clientes = new javax.swing.JMenuItem();
-        jMenuItem_Livros = new javax.swing.JMenuItem();
+        jMenuItem_Produto = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMenuItem_Sair = new javax.swing.JMenuItem();
-        jMenu1_Opcoes = new javax.swing.JMenu();
-        jMenuItem_Estoque = new javax.swing.JMenuItem();
         jMenu_Consulta = new javax.swing.JMenu();
+        jMenuItem1_Clientes = new javax.swing.JMenuItem();
+        jMenuItem1_Produtos = new javax.swing.JMenuItem();
+        jMenu1_Compas = new javax.swing.JMenu();
+        jMenuItem1_Compras_Dia = new javax.swing.JMenuItem();
+        jMenuItem1_Compras_Mes = new javax.swing.JMenuItem();
+        jMenuItem1_Compras_Ano = new javax.swing.JMenuItem();
+        jMenu1_Vendas = new javax.swing.JMenu();
+        jMenuItem_NovaVenda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Controle da Livraria Livro Aberto");
@@ -64,26 +70,49 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenuItem_Clientes.setText("Clientes");
         jMenu_Cadastros.add(jMenuItem_Clientes);
 
-        jMenuItem_Livros.setText("Livros");
-        jMenu_Cadastros.add(jMenuItem_Livros);
+        jMenuItem_Produto.setText("Produto");
+        jMenuItem_Produto.setToolTipText("");
+        jMenuItem_Produto.setName(""); // NOI18N
+        jMenu_Cadastros.add(jMenuItem_Produto);
         jMenu_Cadastros.add(jSeparator1);
 
         jMenuItem_Sair.setText("Sair");
         jMenu_Cadastros.add(jMenuItem_Sair);
-
-        jMenu1_Opcoes.setText("Opçoes");
-
-        jMenuItem_Estoque.setText("Estoque");
-        jMenu1_Opcoes.add(jMenuItem_Estoque);
-
-        jMenu_Cadastros.add(jMenu1_Opcoes);
 
         jMenuBar1.add(jMenu_Cadastros);
 
         jMenu_Consulta.setText("Consultas");
         jMenu_Consulta.setToolTipText("");
         jMenu_Consulta.setName(""); // NOI18N
+
+        jMenuItem1_Clientes.setText("Clientes");
+        jMenu_Consulta.add(jMenuItem1_Clientes);
+
+        jMenuItem1_Produtos.setText("Produtos");
+        jMenu_Consulta.add(jMenuItem1_Produtos);
+
+        jMenu1_Compas.setText("Compras");
+
+        jMenuItem1_Compras_Dia.setText("Dia");
+        jMenu1_Compas.add(jMenuItem1_Compras_Dia);
+
+        jMenuItem1_Compras_Mes.setText("Mes");
+        jMenu1_Compas.add(jMenuItem1_Compras_Mes);
+
+        jMenuItem1_Compras_Ano.setText("Ano");
+        jMenu1_Compas.add(jMenuItem1_Compras_Ano);
+
+        jMenu_Consulta.add(jMenu1_Compas);
+
         jMenuBar1.add(jMenu_Consulta);
+
+        jMenu1_Vendas.setText("Vendas");
+        jMenu1_Vendas.setToolTipText("");
+
+        jMenuItem_NovaVenda.setText("Nova Venda");
+        jMenu1_Vendas.add(jMenuItem_NovaVenda);
+
+        jMenuBar1.add(jMenu1_Vendas);
 
         setJMenuBar(jMenuBar1);
 
@@ -132,11 +161,17 @@ public class formPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1_Opcoes;
+    private javax.swing.JMenu jMenu1_Compas;
+    private javax.swing.JMenu jMenu1_Vendas;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1_Clientes;
+    private javax.swing.JMenuItem jMenuItem1_Compras_Ano;
+    private javax.swing.JMenuItem jMenuItem1_Compras_Dia;
+    private javax.swing.JMenuItem jMenuItem1_Compras_Mes;
+    private javax.swing.JMenuItem jMenuItem1_Produtos;
     private javax.swing.JMenuItem jMenuItem_Clientes;
-    private javax.swing.JMenuItem jMenuItem_Estoque;
-    private javax.swing.JMenuItem jMenuItem_Livros;
+    private javax.swing.JMenuItem jMenuItem_NovaVenda;
+    private javax.swing.JMenuItem jMenuItem_Produto;
     private javax.swing.JMenuItem jMenuItem_Sair;
     private javax.swing.JMenu jMenu_Cadastros;
     private javax.swing.JMenu jMenu_Consulta;

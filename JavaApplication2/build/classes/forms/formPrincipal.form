@@ -15,9 +15,11 @@
                 <Property name="text" type="java.lang.String" value="Clientes"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Livros">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Produto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Livros"/>
+                <Property name="text" type="java.lang.String" value="Produto"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
@@ -27,18 +29,6 @@
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="jMenu1_Opcoes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Op&#xe7;oes"/>
-              </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_Estoque">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Estoque"/>
-                  </Properties>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu_Consulta">
@@ -47,6 +37,53 @@
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1_Clientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clientes"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1_Produtos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Produtos"/>
+              </Properties>
+            </MenuItem>
+            <Menu class="javax.swing.JMenu" name="jMenu1_Compas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Compras"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1_Compras_Dia">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Dia"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1_Compras_Mes">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Mes"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1_Compras_Ano">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Ano"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu1_Vendas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Vendas"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem_NovaVenda">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nova Venda"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
