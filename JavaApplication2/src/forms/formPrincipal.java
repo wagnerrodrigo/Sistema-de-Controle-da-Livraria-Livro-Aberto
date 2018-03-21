@@ -5,6 +5,8 @@
  */
 package forms;
 
+import java.awt.Toolkit;
+
 /**
  *
  * @author alunoces
@@ -16,6 +18,9 @@ public class formPrincipal extends javax.swing.JFrame {
      */
     public formPrincipal() {
         initComponents();
+        //this.setExtendedState(this.MAXIMIZED_BOTH);
+        
+         
     }
 
     /**
@@ -44,6 +49,11 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenuItem1_Compras_Ano = new javax.swing.JMenuItem();
         jMenu1_Vendas = new javax.swing.JMenu();
         jMenuItem_NovaVenda = new javax.swing.JMenuItem();
+        jMenuItem1_Emitir_NF = new javax.swing.JMenuItem();
+        jMenu1_Suporte = new javax.swing.JMenu();
+        jMenuItem1_Ajuda = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem1_Sobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Controle da Livraria Livro Aberto");
@@ -112,7 +122,21 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenuItem_NovaVenda.setText("Nova Venda");
         jMenu1_Vendas.add(jMenuItem_NovaVenda);
 
+        jMenuItem1_Emitir_NF.setText("Emitir N.F");
+        jMenu1_Vendas.add(jMenuItem1_Emitir_NF);
+
         jMenuBar1.add(jMenu1_Vendas);
+
+        jMenu1_Suporte.setText("Suporte");
+
+        jMenuItem1_Ajuda.setText("Ajuda");
+        jMenu1_Suporte.add(jMenuItem1_Ajuda);
+        jMenu1_Suporte.add(jSeparator2);
+
+        jMenuItem1_Sobre.setText("Sobre");
+        jMenu1_Suporte.add(jMenuItem1_Sobre);
+
+        jMenuBar1.add(jMenu1_Suporte);
 
         setJMenuBar(jMenuBar1);
 
@@ -121,7 +145,8 @@ public class formPrincipal extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
        //this.setMaximizedBounds(this.MAXIMIZED_BOTH);
-       this.setExtendedState(this.MAXIMIZED_BOTH);
+       //this.setState(this.MAXIMIZED_BOTH);
+       this.setSize(Toolkit.getDefaultToolkit().getScreenSize()); // funçao para maximizar a tela !!! no linux ou resolução difetentes!!!
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -157,18 +182,23 @@ public class formPrincipal extends javax.swing.JFrame {
                 new formPrincipal().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1_Compas;
+    private javax.swing.JMenu jMenu1_Suporte;
     private javax.swing.JMenu jMenu1_Vendas;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1_Ajuda;
     private javax.swing.JMenuItem jMenuItem1_Clientes;
     private javax.swing.JMenuItem jMenuItem1_Compras_Ano;
     private javax.swing.JMenuItem jMenuItem1_Compras_Dia;
     private javax.swing.JMenuItem jMenuItem1_Compras_Mes;
+    private javax.swing.JMenuItem jMenuItem1_Emitir_NF;
     private javax.swing.JMenuItem jMenuItem1_Produtos;
+    private javax.swing.JMenuItem jMenuItem1_Sobre;
     private javax.swing.JMenuItem jMenuItem_Clientes;
     private javax.swing.JMenuItem jMenuItem_NovaVenda;
     private javax.swing.JMenuItem jMenuItem_Produto;
@@ -177,5 +207,6 @@ public class formPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_Consulta;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }
