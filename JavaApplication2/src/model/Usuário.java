@@ -15,15 +15,17 @@ public class Usuário {
     private String senha;
     
     // Construtor
+    
+    public Usuário() {
+        nome = "Admin";
+        matricula = "AC2018";
+        senha = "s1234";
+    }
+
     public Usuário(String nome, String matricula, String senha) {
         this.nome = nome;
         this.matricula = matricula;
         this.senha = senha;
-        
-        
-        // esta faltando iniciar o objeto com parametros
-        
-    }
     // metodos get e set
 
     public String getNome() {
@@ -33,7 +35,7 @@ public class Usuário {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    
     public String getMatricula() {
         return matricula;
     }
@@ -53,8 +55,9 @@ public class Usuário {
     // metodos da classes
     
     // metodo de validar senha
-    private String validarSenha(String validarSenha){
-        return validarSenha;
+    private boolean validarSenha(String senha){
+        if(senha.length() == 5 && !senha.isEmpty())
+            return true;
     }
     // metodo de validar matricula
     private String validarMatricula(String validarMatricula){
