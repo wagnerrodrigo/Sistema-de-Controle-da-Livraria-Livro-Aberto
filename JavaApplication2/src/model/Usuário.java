@@ -28,7 +28,11 @@ public class Usuário {
         this.senha = senha;
     // metodos get e set
 
-    public String getNome() {
+    /**
+     *
+     * @return
+     */
+    public String getNome(){
         return nome;
     }
 
@@ -74,7 +78,7 @@ public class Usuário {
         if(matricula.toUpperCase().equals(this.matricula.toUpperCase()) && senha.toUpperCase().equals(this.senha.toUpperCase()))
                 return true;
         else
-            return false;
-    }
+            return false; 
+   }
 }
 

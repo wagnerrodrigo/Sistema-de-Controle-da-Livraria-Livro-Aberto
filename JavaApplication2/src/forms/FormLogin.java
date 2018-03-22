@@ -5,11 +5,15 @@
  */
 package forms;
 
+import model.Usuário;
+
 /**
  *
  * @author wagner
  */
 public class FormLogin extends javax.swing.JFrame {
+
+    private Usuário user;
 
     /**
      * Creates new form JFrame_Login
@@ -58,8 +62,18 @@ public class FormLogin extends javax.swing.JFrame {
         });
 
         jbt_Cancelar.setText("Cancelar");
+        jbt_Cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_CancelarActionPerformed(evt);
+            }
+        });
 
         jbt_Sair.setText("Sair");
+        jbt_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_SairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,11 +128,27 @@ public class FormLogin extends javax.swing.JFrame {
 
     private void jtf_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_SenhaActionPerformed
         // TODO add your handling code here:
+        // nao me lembro desta ação
     }//GEN-LAST:event_jtf_SenhaActionPerformed
 
     private void jbt_AcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_AcessarActionPerformed
-        // TODO add your handling code here:
+        // botao de acessar
+        user = new Usuário();
+        String mat = jlb_Matricula.getText();
+        String senha = jlb_Senha.getText();
     }//GEN-LAST:event_jbt_AcessarActionPerformed
+
+    private void jbt_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_CancelarActionPerformed
+        // botao de cancelar
+        jlb_Matricula.setText("");
+        jlb_Senha.setText("");
+        jlb_Matricula.requestFocus();
+    }//GEN-LAST:event_jbt_CancelarActionPerformed
+
+    private void jbt_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_SairActionPerformed
+        // botao de sair !!!
+        this.dispose();
+    }//GEN-LAST:event_jbt_SairActionPerformed
 
     /**
      * @param args the command line arguments
