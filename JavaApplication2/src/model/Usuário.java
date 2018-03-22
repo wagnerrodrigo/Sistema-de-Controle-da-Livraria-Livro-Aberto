@@ -56,17 +56,25 @@ public class Usuário {
     
     // metodo de validar senha
     private boolean validarSenha(String senha){
+        
         if(senha.length() == 5 && !senha.isEmpty())
             return true;
+        else
+            return false;
     }
     // metodo de validar matricula
-    private String validarMatricula(String validarMatricula){
-        return validarMatricula;
+    private boolean validarMatricula(String matricula){
+        if(matricula.length() == 6)
+            return true;
+        else
+            return false;
     }
     
-    // metodo efetuar login
-//    private void efetuarLogin(String validarSenha, String validarMatricula){
-//        this.efetuarLogin(validarSenha, validarMatricula);
-//    }
+    public boolean efetuarLogin(String matricula, String senha){
+        if(matricula.toUpperCase().equals(this.matricula.toUpperCase()) && senha.toUpperCase().equals(this.senha.toUpperCase()))
+                return true;
+        else
+            return false;
+    }
 }
 
