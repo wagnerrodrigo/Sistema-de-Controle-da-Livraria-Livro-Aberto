@@ -5,6 +5,7 @@
  */
 package forms;
 
+import javax.swing.JOptionPane;
 import model.Usuário;
 
 /**
@@ -13,7 +14,7 @@ import model.Usuário;
  */
 public class FormLogin extends javax.swing.JFrame {
 
-    private Usuário user;
+    public Usuário user;
 
     /**
      * Creates new form JFrame_Login
@@ -136,6 +137,14 @@ public class FormLogin extends javax.swing.JFrame {
         user = new Usuário();
         String mat = jlb_Matricula.getText();
         String senha = jlb_Senha.getText();
+        
+        if(mat.trim().isEmpty() || senha.trim().isEmpty() )
+        {
+            JOptionPane.showMessageDialog(null, "Favor preencher todos os dados!!!","Problemas encontrado", JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            if(user.validarMatricula)
+        }
     }//GEN-LAST:event_jbt_AcessarActionPerformed
 
     private void jbt_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_CancelarActionPerformed
