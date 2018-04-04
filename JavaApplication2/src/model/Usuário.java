@@ -26,6 +26,7 @@ public class Usuário {
         this.nome = nome;
         this.matricula = matricula;
         this.senha = senha;
+    }
     // metodos get e set
 
     /**
@@ -59,7 +60,7 @@ public class Usuário {
     // metodos da classes
     
     // metodo de validar senha
-    private boolean validarSenha(String senha){
+    public boolean validarSenha(String senha){
         
         if(senha.length() == 5 && !senha.isEmpty())
             return true;
@@ -67,7 +68,7 @@ public class Usuário {
             return false;
     }
     // metodo de validar matricula
-    private boolean validarMatricula(String matricula){
+    public boolean validarMatricula(String matricula){
         if(matricula.length() == 6)
             return true;
         else
