@@ -142,8 +142,17 @@ public class FormLogin extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "Favor preencher todos os dados!!!","Problemas encontrado", JOptionPane.WARNING_MESSAGE);
         }
-        else{
-            if(user.validarMatricula)
+        else
+        {
+            if(user.validarMatricula(mat) && user.validarSenha(senha))
+            {
+                if(user.efetuarLogin(mat, senha))
+                    JOptionPane.showMessageDialog(null, "Login efutuado com sucesso! ", "Atenção ", JOptionPane.INFORMATION_MESSAGE);
+                else
+                    JOptionPane.showMessageDialog(null, "Dados de Login não conferem!! \nPor favor, tente novamente", "Problema encontrado", JOptionPane.INFORMATION_MESSAGE);
+            }        
+            else
+                JOptionPane.showMessageDialog(null, "Seus dados de login estao incorretos! \nFavor preenche-los novamente", "problema encontrado",JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jbt_AcessarActionPerformed
 

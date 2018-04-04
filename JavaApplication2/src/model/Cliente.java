@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+import model.Endereco;
 
 /**
  *
@@ -15,18 +16,22 @@ public class Cliente {
     public String estadoCivil;
     public String telefone;
     public String email;
-    public String enderco;
+    public String endereco;
 
     public Cliente() {
+        endereco = new Endereco();
     }
 
-    public Cliente(String nome, String cpf, String estadoCivil, String telefone, String email, String enderco) {
+    public Cliente(String nome, String cpf, String estadoCivil, String telefone, String email, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.estadoCivil = estadoCivil;
         this.telefone = telefone;
         this.email = email;
-        this.enderco = enderco;
+        this.endereco = endereco;
+    }
+    public Cliente(Endereco endereco){
+        this.endereco = endereco;
     }
     
     // metodos da classe 
@@ -75,11 +80,11 @@ public class Cliente {
     }
 
     public String getEnderco() {
-        return enderco;
+        return endereco;
     }
 
-    public void setEnderco(String enderco) {
-        this.enderco = enderco;
+    public void setEnderco(String endereco) {
+        this.endereco = endereco;
     }
 
     
