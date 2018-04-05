@@ -5,6 +5,7 @@
  */
 package forms;
 
+import dao.ClienteDao;
 import java.awt.Toolkit;
 
 /**
@@ -13,10 +14,12 @@ import java.awt.Toolkit;
  */
 public class formPrincipal extends javax.swing.JFrame {
 
+    public static ClienteDao bdcliente = null;
     /**
      * Creates new form formPrincipal
      */
     public formPrincipal() {
+        bdcliente = new ClienteDao(); // base de dados do cliente estou iniciando os dados do clientes
         initComponents();
         //this.setExtendedState(this.MAXIMIZED_BOTH);
         

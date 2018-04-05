@@ -5,6 +5,8 @@
  */
 package forms;
 
+import model.Cliente;
+
 /**
  *
  * @author wagner
@@ -57,6 +59,11 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         jbl_NomeCompleto.setText("Nome Completo");
 
         jbt_Buscar.setText("Buscar");
+        jbt_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_BuscarActionPerformed(evt);
+            }
+        });
 
         jFormattedTextField_Cpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +174,11 @@ public class CadastroDeCliente extends javax.swing.JFrame {
 
         jbt_Cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/inserirCliente.png"))); // NOI18N
         jbt_Cadastrar.setText("Cadastra");
+        jbt_Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_CadastrarActionPerformed(evt);
+            }
+        });
 
         jbt_Atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/atualizar.png"))); // NOI18N
         jbt_Atualizar.setText("Atualizar");
@@ -251,6 +263,26 @@ public class CadastroDeCliente extends javax.swing.JFrame {
     private void jFormattedTextField_CpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField_CpfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFormattedTextField_CpfActionPerformed
+
+    private void jbt_CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_CadastrarActionPerformed
+        // peguei os valores dos campos
+        Cliente cliente = new Cliente();
+        // colocaque cada dados no clintee
+        formPrincipal.bdcliente.inserirCliente(cliente);
+    }//GEN-LAST:event_jbt_CadastrarActionPerformed
+
+    private void jbt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarActionPerformed
+         // pegar o cpf do campo
+         Cliente cliente =formPrincipal.bdcliente.buscarCliente("cpf");
+         if(cliente != null )
+         {
+             // colocar cada dado do cliente em cada compo
+         }
+         else
+         {
+             // mostrar uma msg de erro
+         }
+    }//GEN-LAST:event_jbt_BuscarActionPerformed
 
     /**
      * @param args the command line arguments
