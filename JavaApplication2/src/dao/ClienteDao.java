@@ -38,4 +38,27 @@ public class ClienteDao {
         }
         return cli;
     } 
+    
+    public void removerCliente(String cpf)
+    {   
+        Cliente cli = buscarCliente(cpf);
+        if(cli != null)
+        {
+            lista.remove(cli);
+        }
+    }
+            
+    public List<Cliente> todosClientes()
+    {
+        return lista;
+    }
+    public void atualizarCliente(String cpf)
+    {
+        Cliente cli = buscarCliente(cpf);
+        if(cli !=null)
+        {
+            int idx = lista.indexOf(cli);
+            lista.set(idx, cli);
+        }
+    }
 }

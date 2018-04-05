@@ -16,13 +16,13 @@ public class Cliente {
     public String estadoCivil;
     public String telefone;
     public String email;
-    public String endereco;
+    public Endereco endereco;
 
     public Cliente() {
         endereco = new Endereco();
     }
 
-    public Cliente(String nome, String cpf, String estadoCivil, String telefone, String email, String endereco) {
+    public Cliente(String nome, String cpf, String estadoCivil, String telefone, String email, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;
         this.estadoCivil = estadoCivil;
@@ -79,11 +79,11 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getEnderco() {
+    public Endereco getEnderco() {
         return endereco;
     }
 
-    public void setEnderco(String endereco) {
+    public void setEnderco(Endereco endereco) {
         this.endereco = endereco;
     }
 
