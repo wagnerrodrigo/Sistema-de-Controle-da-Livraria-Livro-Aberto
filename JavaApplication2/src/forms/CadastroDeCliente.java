@@ -188,6 +188,11 @@ public class CadastroDeCliente extends javax.swing.JFrame {
 
         jbt_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/sair.png"))); // NOI18N
         jbt_Sair.setText("Sair");
+        jbt_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_SairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -283,6 +288,11 @@ public class CadastroDeCliente extends javax.swing.JFrame {
              // mostrar uma msg de erro
          }
     }//GEN-LAST:event_jbt_BuscarActionPerformed
+
+    private void jbt_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_SairActionPerformed
+        // TODO add your handling code her
+        this.dispose();
+    }//GEN-LAST:event_jbt_SairActionPerformed
 
     /**
      * @param args the command line arguments
