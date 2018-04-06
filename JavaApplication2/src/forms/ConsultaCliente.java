@@ -30,6 +30,10 @@ public class ConsultaCliente extends javax.swing.JFrame {
         jlb_Cpf = new javax.swing.JLabel();
         jFTF_CPF = new javax.swing.JFormattedTextField();
         jbt_BuscarCliente = new javax.swing.JButton();
+        jScrollPane1_AreaTexto = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jbt_Excluir = new javax.swing.JButton();
+        jbt_Sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Consulta de Clientes");
@@ -49,6 +53,21 @@ public class ConsultaCliente extends javax.swing.JFrame {
 
         jbt_BuscarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/buscar.png"))); // NOI18N
         jbt_BuscarCliente.setText("Buscar Cliente");
+        jbt_BuscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_BuscarClienteActionPerformed(evt);
+            }
+        });
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1_AreaTexto.setViewportView(jTextArea1);
+
+        jbt_Excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icExcluir.png"))); // NOI18N
+        jbt_Excluir.setText("Excluir");
+
+        jbt_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icSair.png"))); // NOI18N
+        jbt_Sair.setText("Sair");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,10 +79,17 @@ public class ConsultaCliente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlb_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jFTF_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                        .addComponent(jbt_BuscarCliente)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbt_Excluir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbt_Sair))
+                            .addComponent(jScrollPane1_AreaTexto)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jFTF_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                                .addComponent(jbt_BuscarCliente)))
                         .addGap(73, 73, 73))))
         );
         layout.setVerticalGroup(
@@ -75,7 +101,13 @@ public class ConsultaCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jFTF_CPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jbt_BuscarCliente))
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1_AreaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbt_Excluir)
+                    .addComponent(jbt_Sair))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -84,6 +116,10 @@ public class ConsultaCliente extends javax.swing.JFrame {
     private void jFTF_CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFTF_CPFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jFTF_CPFActionPerformed
+
+    private void jbt_BuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbt_BuscarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,7 +158,11 @@ public class ConsultaCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField jFTF_CPF;
+    private javax.swing.JScrollPane jScrollPane1_AreaTexto;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbt_BuscarCliente;
+    private javax.swing.JButton jbt_Excluir;
+    private javax.swing.JButton jbt_Sair;
     private javax.swing.JLabel jlb_Cpf;
     // End of variables declaration//GEN-END:variables
 }
