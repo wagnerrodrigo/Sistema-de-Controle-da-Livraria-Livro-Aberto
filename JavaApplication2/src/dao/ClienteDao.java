@@ -17,15 +17,29 @@ public class ClienteDao {
     
     private List<Cliente> lista = null;
     
+    /**
+     * Construtor adiciona um objeto na coleção
+     */
     public ClienteDao(){
         lista = new ArrayList<Cliente>();
         
     }
+    /**
+     * Adiciona um objeto cliente na coleção
+     * @param inserirCliente
+     */
     
     public void inserirCliente(Cliente cliente)
     {
         lista.add(cliente);
     }
+    
+    /**
+     * Retorna um objeto cliente da coleção, mediante o cpf informado por parâmetro
+     * ou null caso não ache
+     * @param buscarCliente
+     * @return 
+     */
     
     public Cliente buscarCliente(String cpf)
     {
@@ -39,6 +53,12 @@ public class ClienteDao {
         return cli;
     } 
     
+    
+    /**
+     * procura o clientee pelo Cpf na coleção (lmbrese de usar o método acima )
+     * e o remove
+     * @param removerCliente 
+     */
     public void removerCliente(String cpf)
     {   
         Cliente cli = buscarCliente(cpf);
@@ -48,6 +68,10 @@ public class ClienteDao {
         }
     }
             
+    /**
+     * retorna a própria coleção de clientes
+     * @return 
+     */
     public List<Cliente> todosClientes()
     {
         return lista;

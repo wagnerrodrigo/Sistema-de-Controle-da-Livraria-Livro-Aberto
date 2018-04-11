@@ -41,7 +41,7 @@
                           <Component id="jScrollPane1_AreaTexto" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jFTF_CPF" min="-2" pref="137" max="-2" attributes="0"/>
-                              <EmptySpace pref="54" max="32767" attributes="0"/>
+                              <EmptySpace pref="72" max="32767" attributes="0"/>
                               <Component id="jbt_BuscarCliente" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -68,7 +68,7 @@
                   <Component id="jbt_Excluir" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jbt_Sair" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

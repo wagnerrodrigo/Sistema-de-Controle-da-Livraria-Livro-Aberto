@@ -10,16 +10,21 @@ import java.awt.Toolkit;
 
 /**
  *
- * @author alunoces
+ * @author formPrincipal 
+ * a linha abaixo e usada para para acessar nossos clientes adicionados no formPrincipal
+ * 
  */
 public class formPrincipal extends javax.swing.JFrame {
 
     public static ClienteDao bdcliente = null;
     /**
      * Creates new form formPrincipal
+     * O bdcliente é nosso objeto feito da classa clienteDao
+     * o dbcliente esta como static porque se fecharmos o formPrincipal nosso clientes 
+     * adicionado vão ser apagados!!!
      */
     public formPrincipal() {
-        bdcliente = new ClienteDao(); // base de dados do cliente estou iniciando os dados do clientes
+        bdcliente = new ClienteDao(); // base de dados do cliente, esta sendo iniciando os dados do clientes
         initComponents();
         //this.setExtendedState(this.MAXIMIZED_BOTH);
         
