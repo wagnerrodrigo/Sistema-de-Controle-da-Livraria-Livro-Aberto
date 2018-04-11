@@ -44,6 +44,7 @@ public class CadastroLivors extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastro de livros (Acervo)");
 
         jlb_Codigo.setText("Código:");
 
