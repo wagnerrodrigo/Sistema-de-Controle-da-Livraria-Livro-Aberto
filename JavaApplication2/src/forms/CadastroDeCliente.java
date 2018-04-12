@@ -278,7 +278,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
 
     private void jbt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarActionPerformed
          // pegar o cpf do campo
-         Cliente cliente =formPrincipal.bdcliente.buscarCliente("cpf");
+         Cliente cliente = formPrincipal.bdcliente.buscarCliente("cpf");
          if(cliente != null )
          {
              // colocar cada dado do cliente em cada compo

@@ -152,7 +152,7 @@ public class ConsultaCliente extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-      jta_AreaTxtic void run() {
+      public void run() {
                 new ConsultaCliente().setVisible(true);
             }
         });

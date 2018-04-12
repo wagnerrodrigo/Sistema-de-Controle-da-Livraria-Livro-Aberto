@@ -27,6 +27,12 @@ public class CadastroLivors extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToolBar2 = new javax.swing.JToolBar();
+        jbtn_Cadastrar = new javax.swing.JButton();
+        jbtn_Atualizar = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        jbtn_Cancelar = new javax.swing.JButton();
+        jbtn_Sair = new javax.swing.JButton();
         jlb_Codigo = new javax.swing.JLabel();
         jftxf_Codigo = new javax.swing.JFormattedTextField();
         jlb_Titulo = new javax.swing.JLabel();
@@ -39,12 +45,40 @@ public class CadastroLivors extends javax.swing.JFrame {
         jtf_ValorUni = new javax.swing.JTextField();
         jtf_QuantiEsto = new javax.swing.JTextField();
         jFtxf_DataPubli = new javax.swing.JFormattedTextField();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de livros (Acervo)");
+
+        jToolBar2.setRollover(true);
+
+        jbtn_Cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icCadlivro.png"))); // NOI18N
+        jbtn_Cadastrar.setText("Cadastrar");
+        jbtn_Cadastrar.setFocusable(false);
+        jbtn_Cadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_Cadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jbtn_Cadastrar);
+
+        jbtn_Atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icAtualizar.png"))); // NOI18N
+        jbtn_Atualizar.setText("Atualizar");
+        jbtn_Atualizar.setFocusable(false);
+        jbtn_Atualizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_Atualizar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jbtn_Atualizar);
+        jToolBar2.add(jSeparator1);
+
+        jbtn_Cancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icCancelar.png"))); // NOI18N
+        jbtn_Cancelar.setText("Cancelar");
+        jbtn_Cancelar.setFocusable(false);
+        jbtn_Cancelar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_Cancelar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jbtn_Cancelar);
+
+        jbtn_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icSair.png"))); // NOI18N
+        jbtn_Sair.setText("Sair");
+        jbtn_Sair.setFocusable(false);
+        jbtn_Sair.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jbtn_Sair.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jbtn_Sair);
 
         jlb_Codigo.setText("Código:");
 
@@ -83,25 +117,14 @@ public class CadastroLivors extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icCadlivro.png"))); // NOI18N
-        jMenu1.setText("Cadastrar");
-        jMenuBar2.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar2.add(jMenu2);
-
-        setJMenuBar(jMenuBar2);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jToolBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jcb_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlb_ValorUni)
@@ -110,11 +133,11 @@ public class CadastroLivors extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jlb_QuantiEsto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jtf_QuantiEsto, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlb_DataPubl)
-                            .addComponent(jFtxf_DataPubli, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(79, 79, 79))
+                        .addGap(71, 71, 71)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jlb_DataPubl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jFtxf_DataPubli)))
+                    .addComponent(jcb_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jftxf_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,13 +146,14 @@ public class CadastroLivors extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtf_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlb_Titulo))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jlb_Titulo))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlb_Codigo)
                     .addComponent(jlb_Titulo))
@@ -137,11 +161,11 @@ public class CadastroLivors extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jftxf_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
                 .addComponent(jlb_Fornecedor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jcb_fornecedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlb_ValorUni)
                     .addComponent(jlb_QuantiEsto)
@@ -151,7 +175,7 @@ public class CadastroLivors extends javax.swing.JFrame {
                     .addComponent(jtf_ValorUni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtf_QuantiEsto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFtxf_DataPubli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(91, 91, 91))
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -206,9 +230,12 @@ public class CadastroLivors extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField jFtxf_DataPubli;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JButton jbtn_Atualizar;
+    private javax.swing.JButton jbtn_Cadastrar;
+    private javax.swing.JButton jbtn_Cancelar;
+    private javax.swing.JButton jbtn_Sair;
     private javax.swing.JComboBox<String> jcb_fornecedor;
     private javax.swing.JFormattedTextField jftxf_Codigo;
     private javax.swing.JLabel jlb_Codigo;

@@ -87,6 +87,9 @@
       </Layout>
     </Container>
     <Component class="javax.swing.JTextField" name="jtf_Matricula">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtf_MatriculaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jlb_Matricula">
       <Properties>

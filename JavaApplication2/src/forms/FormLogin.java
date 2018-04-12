@@ -15,6 +15,8 @@ import model.Usuário;
 public class FormLogin extends javax.swing.JFrame {
 
     public Usuário user;
+    // public formPrincipal forP; nao e nessessario nesse caso pois o objeto vai ser fechado no mesmo
+    // instante que eu fechar o formulario.
 
     /**
      * Creates new form JFrame_Login
@@ -44,6 +46,12 @@ public class FormLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jtf_Matricula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_MatriculaActionPerformed(evt);
+            }
+        });
 
         jlb_Matricula.setText("Digite sua Matricula:");
 
@@ -135,8 +143,10 @@ public class FormLogin extends javax.swing.JFrame {
     private void jbt_AcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_AcessarActionPerformed
         // botao de acessar
         user = new Usuário();
-        String mat = jlb_Matricula.getText();
-        String senha = jlb_Senha.getText();
+        formPrincipal forP = new formPrincipal();
+        
+        String mat = jtf_Matricula.getText(); // nao esquecer de colocar o nome correto para ser chamado
+        String senha = jtf_Senha.getText(); // aqui estou passando o campo de testo para ser chamado para o if
         
         if(mat.trim().isEmpty() || senha.trim().isEmpty() )
         {
@@ -146,8 +156,11 @@ public class FormLogin extends javax.swing.JFrame {
         {
             if(user.validarMatricula(mat) && user.validarSenha(senha))
             {
-                if(user.efetuarLogin(mat, senha))
+                if(user.efetuarLogin(mat, senha)){
                     JOptionPane.showMessageDialog(null, "Login efutuado com sucesso! ", "Atenção ", JOptionPane.INFORMATION_MESSAGE);
+                    forP.setVisible(true); // aqui eu é chamado o outro formulario!!! :D \o/
+                    this.dispose(); // aqui fecha o formula
+                }
                 else
                     JOptionPane.showMessageDialog(null, "Dados de Login não conferem!! \nPor favor, tente novamente", "Problema encontrado", JOptionPane.INFORMATION_MESSAGE);
             }        
@@ -158,15 +171,20 @@ public class FormLogin extends javax.swing.JFrame {
 
     private void jbt_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_CancelarActionPerformed
         // botao de cancelar
-        jlb_Matricula.setText("");
-        jlb_Senha.setText("");
-        jlb_Matricula.requestFocus();
+        jtf_Matricula.setText(""); // nao esquecer de colocar os nomes corretamente 
+        jtf_Senha.setText("");
+        jtf_Matricula.requestFocus();
+        
     }//GEN-LAST:event_jbt_CancelarActionPerformed
 
     private void jbt_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_SairActionPerformed
         // botao de sair !!!
         this.dispose();
     }//GEN-LAST:event_jbt_SairActionPerformed
+
+    private void jtf_MatriculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_MatriculaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_MatriculaActionPerformed
 
     /**
      * @param args the command line arguments
