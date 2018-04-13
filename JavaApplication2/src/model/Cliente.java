@@ -11,12 +11,12 @@ import model.Endereco;
  * @author wagner
  */
 public class Cliente {
-    public String nome;
-    public String cpf;
-    public String estadoCivil;
-    public String telefone;
-    public String email;
-    public Endereco endereco;
+    private String nome;
+    private String cpf;
+    private String estadoCivil;
+    private String telefone;
+    private String email;
+    private Endereco endereco;
 
     public Cliente() {
         endereco = new Endereco();
@@ -36,7 +36,17 @@ public class Cliente {
     
     // metodos da classe 
     
-    
+    public String toString(){
+        String str = "";
+        str = str +"Nome"+nome;
+        str = str +"Cpf"+cpf;
+        str = str +"Estado Civil"+estadoCivil;
+        str = str +"Telefone"+telefone;
+        str = str +"Email"+email;
+        str = str +"Endereço"+endereco;
+        
+        return str;
+    }
     
     // metodos get e set
     public String getNome() {

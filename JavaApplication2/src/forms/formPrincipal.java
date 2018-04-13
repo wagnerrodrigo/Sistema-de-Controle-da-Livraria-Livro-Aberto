@@ -106,6 +106,11 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenu_Cadastros.add(jSeparator1);
 
         jMenuItem_Sair.setText("Sair");
+        jMenuItem_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_SairActionPerformed(evt);
+            }
+        });
         jMenu_Cadastros.add(jMenuItem_Sair);
 
         jMenuBar1.add(jMenu_Cadastros);
@@ -123,6 +128,11 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenu_Consulta.add(jMenuItem1_Clientes);
 
         jMenuItem1_Produtos.setText("Produtos");
+        jMenuItem1_Produtos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1_ProdutosActionPerformed(evt);
+            }
+        });
         jMenu_Consulta.add(jMenuItem1_Produtos);
 
         jMenu1_Compas.setText("Compras");
@@ -202,6 +212,16 @@ public class formPrincipal extends javax.swing.JFrame {
          */
         new CadastroLivors().setVisible(true);
     }//GEN-LAST:event_jMenuItem_ProdutoActionPerformed
+
+    private void jMenuItem_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_SairActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem_SairActionPerformed
+
+    private void jMenuItem1_ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1_ProdutosActionPerformed
+        // TODO add your handling code here:
+        new BuscaLivros().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1_ProdutosActionPerformed
 
     /**
      * @param args the command line arguments

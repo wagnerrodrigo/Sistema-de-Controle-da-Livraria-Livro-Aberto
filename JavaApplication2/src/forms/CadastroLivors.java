@@ -46,7 +46,7 @@ public class CadastroLivors extends javax.swing.JFrame {
         jtf_QuantiEsto = new javax.swing.JTextField();
         jFtxf_DataPubli = new javax.swing.JFormattedTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de livros (Acervo)");
 
         jToolBar2.setRollover(true);
@@ -179,6 +179,7 @@ public class CadastroLivors extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_ValorUniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_ValorUniActionPerformed

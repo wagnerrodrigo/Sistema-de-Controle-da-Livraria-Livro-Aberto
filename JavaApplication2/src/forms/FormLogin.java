@@ -143,6 +143,9 @@ public class FormLogin extends javax.swing.JFrame {
 
     private void jbt_AcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_AcessarActionPerformed
         // botao de acessar
+        
+        // para o login aprecer primeiro devemos mudar a propriedade do projeto como um todo
+        // para que esse seja a classe principal !!!!
         user = new Usuário();
         formPrincipal forP = new formPrincipal();
         

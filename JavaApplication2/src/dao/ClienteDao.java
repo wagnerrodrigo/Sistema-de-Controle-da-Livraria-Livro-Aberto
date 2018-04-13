@@ -15,18 +15,21 @@ import model.Cliente;
  */
 public class ClienteDao {
     
-    private List<Cliente> lista = null;
+    private List<Cliente> lista = null; // coleções de objetos meu banco de dados
     
     /**
      * Construtor adiciona um objeto na coleção
+     * @param lista iniciando minha lista de objtos
+     * 
      */
     public ClienteDao(){
-        lista = new ArrayList<Cliente>();
+        lista = new ArrayList<Cliente>(); // iniciando minha lista de objetos
         
     }
     /**
      * Adiciona um objeto cliente na coleção
      * @param inserirCliente
+     * 
      */
     
     public void inserirCliente(Cliente cliente)

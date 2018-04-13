@@ -37,7 +37,7 @@ public class BuscaLivros extends javax.swing.JFrame {
         jbt_Excluir = new javax.swing.JButton();
         jbt_Sair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulta de Livros em Acervo");
 
         jlb_Codigo.setText("Código:");
@@ -121,6 +121,7 @@ public class BuscaLivros extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_CodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_CodigoActionPerformed

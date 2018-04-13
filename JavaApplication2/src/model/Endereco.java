@@ -10,11 +10,11 @@ package model;
  * @author wagner
  */
 public class Endereco {
-    public String logradouro;
-    public String complemento;
-    public String cidade;
-    public String estado;
-    public String cep;
+    private String logradouro;
+    private String complemento;
+    private String cidade;
+    private String estado;
+    private String cep;
     
     // construtor
 
