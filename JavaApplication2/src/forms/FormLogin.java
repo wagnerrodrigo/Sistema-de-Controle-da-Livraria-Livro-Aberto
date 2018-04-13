@@ -43,7 +43,7 @@ public class FormLogin extends javax.swing.JFrame {
         jbt_Cancelar = new javax.swing.JButton();
         jbt_Sair = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -133,6 +133,7 @@ public class FormLogin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jtf_SenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_SenhaActionPerformed

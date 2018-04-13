@@ -74,6 +74,7 @@ public class formPrincipal extends javax.swing.JFrame {
         });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel2.setLayout(new java.awt.BorderLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,11 +87,21 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenu_Cadastros.setName(""); // NOI18N
 
         jMenuItem_Clientes.setText("Clientes");
+        jMenuItem_Clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_ClientesActionPerformed(evt);
+            }
+        });
         jMenu_Cadastros.add(jMenuItem_Clientes);
 
         jMenuItem_Produto.setText("Produto");
         jMenuItem_Produto.setToolTipText("");
         jMenuItem_Produto.setName(""); // NOI18N
+        jMenuItem_Produto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_ProdutoActionPerformed(evt);
+            }
+        });
         jMenu_Cadastros.add(jMenuItem_Produto);
         jMenu_Cadastros.add(jSeparator1);
 
@@ -104,6 +115,11 @@ public class formPrincipal extends javax.swing.JFrame {
         jMenu_Consulta.setName(""); // NOI18N
 
         jMenuItem1_Clientes.setText("Clientes");
+        jMenuItem1_Clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1_ClientesActionPerformed(evt);
+            }
+        });
         jMenu_Consulta.add(jMenuItem1_Clientes);
 
         jMenuItem1_Produtos.setText("Produtos");
@@ -156,6 +172,36 @@ public class formPrincipal extends javax.swing.JFrame {
        //this.setState(this.MAXIMIZED_BOTH);
        this.setSize(Toolkit.getDefaultToolkit().getScreenSize()); // funçao para maximizar a tela !!! no linux ou resolução difetentes!!!
     }//GEN-LAST:event_formWindowOpened
+
+    private void jMenuItem_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_ClientesActionPerformed
+        // TODO add your handling code here:
+        /**
+         * Acessar o formulario de Cadastro clientes
+         * posso usar dessa forma tambem
+         * new CadastroDeCliente().setVisible(true);
+         */
+        CadastroDeCliente cadsCli = new CadastroDeCliente();
+        cadsCli.setVisible(true);      
+        
+    }//GEN-LAST:event_jMenuItem_ClientesActionPerformed
+
+    private void jMenuItem1_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1_ClientesActionPerformed
+        // TODO add your handling code here:
+        /**
+         * Acessar o formulario de buscar clientes que no meu caso e
+         * ConsultaCliente 
+         */
+        
+        new ConsultaCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1_ClientesActionPerformed
+
+    private void jMenuItem_ProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_ProdutoActionPerformed
+        // TODO add your handling code here:
+        /**
+         * acessando o formulario de cadastro de livros
+         */
+        new CadastroLivors().setVisible(true);
+    }//GEN-LAST:event_jMenuItem_ProdutoActionPerformed
 
     /**
      * @param args the command line arguments

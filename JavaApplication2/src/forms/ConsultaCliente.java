@@ -35,7 +35,7 @@ public class ConsultaCliente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jta_AreaTxt = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consulta de Clientes");
 
         jlb_Cpf.setText("Cpf");
@@ -113,6 +113,7 @@ public class ConsultaCliente extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jFTF_CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFTF_CPFActionPerformed
