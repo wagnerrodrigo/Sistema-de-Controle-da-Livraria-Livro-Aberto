@@ -10,11 +10,11 @@ package model;
  * @author wagner
  */
 public class Livro {
-    public String codigo;
+    public int codigo;
     public String titulo;
     public String fornecedor;
-    public String quantidadeEst;
-    public String valorUnitario;
+    public int quantidadeEst;
+    public float valorUnitario;
     public String dataPublic;
 
     /**
@@ -32,7 +32,7 @@ public class Livro {
      * @param valorUnitario
      * @param dataPublic 
      */
-    public Livro(String codigo, String titulo, String fornecedor, String quantidadeEst, String valorUnitario, String dataPublic) {
+    public Livro(int codigo, String titulo, String fornecedor, int quantidadeEst, int valorUnitario, String dataPublic) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.fornecedor = fornecedor;
@@ -46,11 +46,11 @@ public class Livro {
      * @return 
      */
     
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -70,19 +70,19 @@ public class Livro {
         this.fornecedor = fornecedor;
     }
 
-    public String getQuantidadeEst() {
+    public int getQuantidadeEst() {
         return quantidadeEst;
     }
 
-    public void setQuantidadeEst(String quantidadeEst) {
+    public void setQuantidadeEst(int quantidadeEst) {
         this.quantidadeEst = quantidadeEst;
     }
 
-    public String getValorUnitario() {
+    public float getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(String valorUnitario) {
+    public void setValorUnitario(float valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 
