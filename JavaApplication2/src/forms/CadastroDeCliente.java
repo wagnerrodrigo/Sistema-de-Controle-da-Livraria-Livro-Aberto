@@ -5,6 +5,7 @@
  */
 package forms;
 
+import javax.swing.JOptionPane;
 import model.Cliente;
 
 /**
@@ -185,6 +186,11 @@ public class CadastroDeCliente extends javax.swing.JFrame {
 
         jbt_Limpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/limpar.png"))); // NOI18N
         jbt_Limpar.setText("Limpar");
+        jbt_Limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_LimparActionPerformed(evt);
+            }
+        });
 
         jbt_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/sair.png"))); // NOI18N
         jbt_Sair.setText("Sair");
@@ -274,7 +280,10 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         // peguei os valores dos campos
         Cliente cliente = new Cliente();
         // colocaque cada dados no clintee
+        cliente.setCpf(jFormattedTextField_Cpf.getText());
+        cliente.setEmail(jFormattedTextField_Email.getText());
         formPrincipal.bdcliente.inserirCliente(cliente);
+       
     }//GEN-LAST:event_jbt_CadastrarActionPerformed
 
     private void jbt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarActionPerformed
@@ -283,10 +292,14 @@ public class CadastroDeCliente extends javax.swing.JFrame {
          if(cliente != null )
          {
              // colocar cada dado do cliente em cada compo
+             jFormattedTextField_Cpf.setText(cliente.getCpf());
+             jFormattedTextField_Email.setText(cliente.getEmail());
          }
          else
          {
-             // mostrar uma msg de erro
+             //JOptionPane.showMessageDialog(null, "Dados de Login não conferem!! \nPor favor, tente novamente", "Problema encontrado", JOptionPane.INFORMATION_MESSAGE);
+              
+             JOptionPane.showMessageDialog(null, "asdf","asdf" ,JOptionPane.INFORMATION_MESSAGE); // mostrar uma msg de erro
          }
     }//GEN-LAST:event_jbt_BuscarActionPerformed
 
@@ -294,6 +307,10 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         // TODO add your handling code her
         this.dispose();
     }//GEN-LAST:event_jbt_SairActionPerformed
+
+    private void jbt_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_LimparActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbt_LimparActionPerformed
 
     /**
      * @param args the command line arguments

@@ -49,6 +49,7 @@ public class CadastroLivors extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de livros (Acervo)");
 
+        jToolBar2.setFloatable(false);
         jToolBar2.setRollover(true);
 
         jbtn_Cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icCadlivro.png"))); // NOI18N

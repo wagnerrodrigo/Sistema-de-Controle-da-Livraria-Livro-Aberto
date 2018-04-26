@@ -21,7 +21,7 @@ public class Cliente {
     public Cliente() {
         endereco = new Endereco();
     }
-
+  
     public Cliente(String nome, String cpf, String estadoCivil, String telefone, String email, Endereco endereco) {
         this.nome = nome;
         this.cpf = cpf;

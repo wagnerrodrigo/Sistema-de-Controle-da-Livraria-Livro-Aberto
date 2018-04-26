@@ -16,7 +16,8 @@ import java.awt.Toolkit;
  */
 public class formPrincipal extends javax.swing.JFrame {
 
-    public static ClienteDao bdcliente = null;
+    public static ClienteDao bdcliente = null; // tenho que iniciar junto com as demais aplicações porque esta sendo 
+    // armazenado os dados nesse formulario.
     /**
      * Creates new form formPrincipal
      * O bdcliente é nosso objeto feito da classa clienteDao
