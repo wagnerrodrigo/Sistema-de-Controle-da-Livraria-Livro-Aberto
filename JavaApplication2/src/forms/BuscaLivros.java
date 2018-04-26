@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package forms;
-
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import model.Livro;
 /**
  *
  * @author wagner
@@ -29,9 +32,9 @@ public class BuscaLivros extends javax.swing.JFrame {
 
         jlb_Codigo = new javax.swing.JLabel();
         jtf_Codigo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jbt_buscarLivros = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtfa_Area = new javax.swing.JTextArea();
         jrb_BuscarTodos = new javax.swing.JRadioButton();
         jbt_Editar = new javax.swing.JButton();
         jbt_Excluir = new javax.swing.JButton();
@@ -48,19 +51,24 @@ public class BuscaLivros extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icBuscar.png"))); // NOI18N
-        jButton1.setText("Buscar Livro");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbt_buscarLivros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icBuscar.png"))); // NOI18N
+        jbt_buscarLivros.setText("Buscar Livro");
+        jbt_buscarLivros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbt_buscarLivrosActionPerformed(evt);
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtfa_Area.setColumns(20);
+        jtfa_Area.setRows(5);
+        jScrollPane1.setViewportView(jtfa_Area);
 
         jrb_BuscarTodos.setText("Buscar Todos");
+        jrb_BuscarTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrb_BuscarTodosActionPerformed(evt);
+            }
+        });
 
         jbt_Editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icAtualizar.png"))); // NOI18N
         jbt_Editar.setText("Editar");
@@ -70,6 +78,11 @@ public class BuscaLivros extends javax.swing.JFrame {
 
         jbt_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icSair.png"))); // NOI18N
         jbt_Sair.setText("Sair");
+        jbt_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_SairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,7 +94,7 @@ public class BuscaLivros extends javax.swing.JFrame {
                     .addComponent(jlb_Codigo)
                     .addComponent(jtf_Codigo, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addComponent(jButton1)
+                .addComponent(jbt_buscarLivros)
                 .addGap(76, 76, 76)
                 .addComponent(jrb_BuscarTodos)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -104,7 +117,7 @@ public class BuscaLivros extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
+                        .addComponent(jbt_buscarLivros)
                         .addComponent(jrb_BuscarTodos))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlb_Codigo)
@@ -128,9 +141,56 @@ public class BuscaLivros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_CodigoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbt_buscarLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_buscarLivrosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        jtf_Codigo.setText("");// limpando a area de texto sempre
+        if(jrb_BuscarTodos.isSelected()) // verifica se a opçao de todos esta setada
+        {
+            List<Livro> cad = new ArrayList<Livro>();
+            cad = formPrincipal.daoLivro.todosLivros(); //pego a lista de todos no dao
+            for(Livro livro: cad)
+            {
+                jtfa_Area.append(livro.toString()); 
+            }
+        }
+        else
+        {
+            if(jtf_Codigo.getText().trim().length() != 0)
+            {
+                int codigo = Integer.parseInt(jtf_Codigo.getText());
+                Livro livro = formPrincipal.daoLivro.buscarLivro(codigo);
+                if(livro != null)
+                {   
+                    jtf_Codigo.setText(livro.toString());
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "Livro não encontrado!", "Atenção!", JOptionPane.ERROR_MESSAGE);
+                
+            }
+              else
+            {
+                JOptionPane.showMessageDialog(null, "Favor preencher o Código do Livro!", "Atenção!", JOptionPane.ERROR_MESSAGE);
+                jtf_Codigo.requestFocus();
+            }
+        }
+    }//GEN-LAST:event_jbt_buscarLivrosActionPerformed
+
+    private void jrb_BuscarTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrb_BuscarTodosActionPerformed
+        // TODO add your handling code here:
+        if(jrb_BuscarTodos.isSelected())
+            jtf_Codigo.setEnabled(false);
+        else
+        {
+            jtf_Codigo.setEnabled(true);
+            jtf_Codigo.requestFocus();
+        }
+        jtf_Codigo.setText("");
+    }//GEN-LAST:event_jrb_BuscarTodosActionPerformed
+
+    private void jbt_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_SairActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jbt_SairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,14 +228,14 @@ public class BuscaLivros extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbt_Editar;
     private javax.swing.JButton jbt_Excluir;
     private javax.swing.JButton jbt_Sair;
+    private javax.swing.JButton jbt_buscarLivros;
     private javax.swing.JLabel jlb_Codigo;
     private javax.swing.JRadioButton jrb_BuscarTodos;
     private javax.swing.JTextField jtf_Codigo;
+    private javax.swing.JTextArea jtfa_Area;
     // End of variables declaration//GEN-END:variables
 }

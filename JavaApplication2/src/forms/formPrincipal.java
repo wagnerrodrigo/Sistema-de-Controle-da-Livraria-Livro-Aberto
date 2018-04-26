@@ -6,7 +6,9 @@
 package forms;
 
 import dao.ClienteDao;
+import dao.LivroDAO;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +20,7 @@ public class formPrincipal extends javax.swing.JFrame {
 
     public static ClienteDao bdcliente = null; // tenho que iniciar junto com as demais aplicações porque esta sendo 
     // armazenado os dados nesse formulario.
+    public static LivroDAO daoLivro = null;
     /**
      * Creates new form formPrincipal
      * O bdcliente é nosso objeto feito da classa clienteDao
@@ -26,6 +29,7 @@ public class formPrincipal extends javax.swing.JFrame {
      */
     public formPrincipal() {
         bdcliente = new ClienteDao(); // base de dados do cliente, esta sendo iniciando os dados do clientes
+        daoLivro = new LivroDAO();
         initComponents();
         //this.setExtendedState(this.MAXIMIZED_BOTH);
         
@@ -216,6 +220,8 @@ public class formPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_SairActionPerformed
         // TODO add your handling code here:
+        int op = JOptionPane.showConfirmDialog(null, "Deseja realmente sair do sistema?", "Confirmação",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+        if(op == JOptionPane.YES_OPTION)
         this.dispose();
     }//GEN-LAST:event_jMenuItem_SairActionPerformed
 

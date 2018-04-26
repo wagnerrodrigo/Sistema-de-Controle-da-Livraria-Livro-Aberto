@@ -93,7 +93,7 @@ public class Livro {
     public void setDataPublic(String dataPublic) {
         this.dataPublic = dataPublic;
     }
-    
+    @Override
     public String toString(){
         String str = "";
         str = str + "Codigo"+codigo;
