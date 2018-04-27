@@ -5,6 +5,9 @@
  */
 package forms;
 
+import javax.swing.JOptionPane;
+import model.Livro;
+
 /**
  *
  * @author wagner
@@ -57,6 +60,11 @@ public class CadastroLivors extends javax.swing.JFrame {
         jbtn_Cadastrar.setFocusable(false);
         jbtn_Cadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jbtn_Cadastrar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jbtn_Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_CadastrarActionPerformed(evt);
+            }
+        });
         jToolBar2.add(jbtn_Cadastrar);
 
         jbtn_Atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icAtualizar.png"))); // NOI18N
@@ -195,6 +203,33 @@ public class CadastroLivors extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jFtxf_DataPubliActionPerformed
 
+    private void jbtn_CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_CadastrarActionPerformed
+        // TODO add your handling code here:
+           int op = JOptionPane.showConfirmDialog(null, "Deseja inserir multiplos Livros?", "Cadastro de Livros", JOptionPane.YES_NO_OPTION);
+        if(op == JOptionPane.YES_OPTION)
+        {
+            this.cadastrarLivros(); // inserindo vários livros na base de dados
+            JOptionPane.showMessageDialog(null, "Livros inseridos com sucesso!", "Atenção!", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jbtn_CadastrarActionPerformed
+
+    
+     public void cadastrarLivros()
+    {
+        Livro livro = null; //criando um livro
+        for(int i=1; i<30; i++) // serão acrescentados 30 livros na base
+        {
+            livro = new Livro();                    
+            livro.setCodigo(1000+i);
+            livro.setTitulo("Livro com Titulo " + i);
+            livro.setFornecedor("Editora " + i+10);
+            livro.setQuantidadeEst((int)(Math.random() * 10)+ 10*i);
+            livro.setValorUnitario((50%i) + (i*10));            
+            livro.setDataPublic(i+"/05/"+(1990+i));
+            formPrincipal.daoLivro.inserirLivro(livro); //adicionando um livro genérico na base
+        }
+        
+    }
     /**
      * @param args the command line arguments
      */
