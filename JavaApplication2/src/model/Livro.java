@@ -15,7 +15,7 @@ public class Livro {
     public String fornecedor;
     public int quantidadeEst;
     public float valorUnitario;
-    public String dataPublic;
+    public String data;
 
     /**
      * Construtor vazio
@@ -30,22 +30,39 @@ public class Livro {
      * @param fornecedor
      * @param quantidadeEst
      * @param valorUnitario
-     * @param dataPublic 
+     * @param data 
      */
-    public Livro(int codigo, String titulo, String fornecedor, int quantidadeEst, int valorUnitario, String dataPublic) {
+    public Livro(int codigo, String titulo, String fornecedor, int quantidadeEst, int valorUnitario, String data) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.fornecedor = fornecedor;
         this.quantidadeEst = quantidadeEst;
         this.valorUnitario = valorUnitario;
-        this.dataPublic = dataPublic;
+        this.data = data;
     }
 
+    /*  
+    * toString
+    */
+    
+    @Override
+    public String toString(){
+        String str = "";
+        str = str + "\nCodigo: -->"+codigo;
+        str = str +"\nTitulo: -->"+titulo;
+        str = str +"\nFornecedor: -->"+fornecedor;
+        str = str +"\n ---------------------------------------";
+        str = str +"\nQuantidade em estoque: -->"+quantidadeEst;
+        str = str +"\n ---------------------------------------";
+        str = str +"\nvalor unitário: -->"+valorUnitario;
+        str = str +"\n ---------------------------------------";
+        str = str +"\ndata de publicação: -->"+data;
+        return str;
+    }
+    
     /**
      * métodos get e set
-     * @return 
      */
-    
     public int getCodigo() {
         return codigo;
     }
@@ -86,23 +103,13 @@ public class Livro {
         this.valorUnitario = valorUnitario;
     }
 
-    public String getDataPublic() {
-        return dataPublic;
+    public String getData() {
+        return data;
     }
 
-    public void setDataPublic(String dataPublic) {
-        this.dataPublic = dataPublic;
+    public void setData(String data) {
+        this.data = data;
     }
-    @Override
-    public String toString(){
-        String str = "";
-        str = str + "Codigo"+codigo;
-        str = str +"Titulo"+titulo;
-        str = str +"Fornecedor"+fornecedor;
-        str = str +"Quantidade em estoque"+quantidadeEst;
-        str = str +"valor unitário"+valorUnitario;
-        str = str +"data de publicação"+dataPublic;
-        return str;
-    }
+    
     
 }

@@ -38,12 +38,16 @@ public class Cliente {
     
     public String toString(){
         String str = "";
-        str = str +"Nome"+nome;
-        str = str +"Cpf"+cpf;
-        str = str +"Estado Civil"+estadoCivil;
-        str = str +"Telefone"+telefone;
-        str = str +"Email"+email;
-        str = str +"Endereço"+endereco;
+        str = str +"\nNome: -->"+nome;
+        str = str +"\nCpf: -->"+cpf;
+        str = str +"\nEstado Civil: -->"+estadoCivil;
+        str = str +"\nTelefone: -->"+telefone;
+        str = str +"\nEmail: -->"+email;
+        str = str +"\n Endereço: -->";
+        str = str +"\nLogradouro: -->"+ endereco.getLogradouro();
+        str = str +"\nCidade: -->"+ endereco.getCidade();
+        str = str + "\n Estado: -->"+ endereco.getEstado();
+        str = str + "\nCEP: -->"+ endereco.getCep();
         
         return str;
     }

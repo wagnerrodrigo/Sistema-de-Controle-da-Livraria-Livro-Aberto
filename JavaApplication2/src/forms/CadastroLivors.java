@@ -225,7 +225,7 @@ public class CadastroLivors extends javax.swing.JFrame {
             livro.setFornecedor("Editora " + i+10);
             livro.setQuantidadeEst((int)(Math.random() * 10)+ 10*i);
             livro.setValorUnitario((50%i) + (i*10));            
-            livro.setDataPublic(i+"/05/"+(1990+i));
+            livro.setData(i+"/05/"+(1990+i));
             formPrincipal.daoLivro.inserirLivro(livro); //adicionando um livro genérico na base
         }
         
