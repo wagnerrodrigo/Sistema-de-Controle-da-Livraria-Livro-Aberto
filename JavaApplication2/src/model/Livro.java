@@ -51,12 +51,11 @@ public class Livro {
         str = str + "\nCodigo: -->"+codigo;
         str = str +"\nTitulo: -->"+titulo;
         str = str +"\nFornecedor: -->"+fornecedor;
-        str = str +"\n ---------------------------------------";
-        str = str +"\nQuantidade em estoque: -->"+quantidadeEst;
-        str = str +"\n ---------------------------------------";
+        str = str +"\ndata de publicação: -->"+data;
         str = str +"\nvalor unitário: -->"+valorUnitario;
         str = str +"\n ---------------------------------------";
-        str = str +"\ndata de publicação: -->"+data;
+        str = str +"\nQuantidade em estoque: -->"+quantidadeEst;
+        str = str +"\n";
         return str;
     }
     

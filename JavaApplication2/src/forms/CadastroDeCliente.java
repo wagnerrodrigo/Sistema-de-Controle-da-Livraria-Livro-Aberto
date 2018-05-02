@@ -37,7 +37,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         jtf_NomeCompleto = new javax.swing.JTextField();
         jbt_Buscar = new javax.swing.JButton();
         jftf_Cpf = new javax.swing.JFormattedTextField();
-        jTabbedPane1_DadosPessoais = new javax.swing.JTabbedPane();
+        jtp_DadosPessoais = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jftf_Email = new javax.swing.JFormattedTextField();
         jlb_Telefone = new javax.swing.JLabel();
@@ -131,33 +131,26 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jRb_Solteiro, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jRb_Casado)
-                .addGap(43, 43, 43)
+                .addGap(52, 52, 52)
                 .addComponent(jRb_UniaoEstavel)
-                .addGap(42, 42, 42)
+                .addGap(40, 40, 40)
                 .addComponent(jRb_Viuvo)
-                .addGap(63, 63, 63))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jRb_Solteiro, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(438, Short.MAX_VALUE)))
+                .addGap(62, 62, 62))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRb_Casado)
                     .addComponent(jRb_UniaoEstavel)
-                    .addComponent(jRb_Viuvo))
-                .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(38, 38, 38)
+                    .addComponent(jRb_Casado)
                     .addComponent(jRb_Solteiro)
-                    .addContainerGap(32, Short.MAX_VALUE)))
+                    .addComponent(jRb_Viuvo))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -177,8 +170,8 @@ public class CadastroDeCliente extends javax.swing.JFrame {
                             .addComponent(jftf_Email, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(175, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,10 +186,10 @@ public class CadastroDeCliente extends javax.swing.JFrame {
                     .addComponent(jftf_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jTabbedPane1_DadosPessoais.addTab("Dados Pessoais", jPanel1);
+        jtp_DadosPessoais.addTab("Dados Pessoais", jPanel1);
 
         jlb_Logradouro.setText("Logradouro:");
 
@@ -253,7 +246,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jlb_Cep)
                             .addComponent(jftf_Cep, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(196, Short.MAX_VALUE))
+                        .addContainerGap(144, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -274,16 +267,16 @@ public class CadastroDeCliente extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlb_Logradouro)
                     .addComponent(jlb_complemento))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jtf_Lagradouro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jtf_Complemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addComponent(jlb_Cep))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jlb_Estado)
                             .addComponent(jlb_Cidade))))
@@ -299,7 +292,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
         );
 
-        jTabbedPane1_DadosPessoais.addTab("Endereço Completo", jPanel3);
+        jtp_DadosPessoais.addTab("Endereço Completo", jPanel3);
 
         jbt_Cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/inserirCliente.png"))); // NOI18N
         jbt_Cadastrar.setText("Cadastra");
@@ -311,6 +304,11 @@ public class CadastroDeCliente extends javax.swing.JFrame {
 
         jbt_Atualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/atualizar.png"))); // NOI18N
         jbt_Atualizar.setText("Atualizar");
+        jbt_Atualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_AtualizarActionPerformed(evt);
+            }
+        });
 
         jbt_Limpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/limpar.png"))); // NOI18N
         jbt_Limpar.setText("Limpar");
@@ -333,32 +331,31 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jlb_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84)
-                        .addComponent(jbl_NomeCompleto))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jftf_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)
-                        .addComponent(jtf_NomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jbt_Buscar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jTabbedPane1_DadosPessoais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jbt_Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(jbt_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80)
-                        .addComponent(jbt_Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)
-                        .addComponent(jbt_Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jtp_DadosPessoais, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(jlb_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(84, 84, 84)
+                            .addComponent(jbl_NomeCompleto))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(jftf_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(56, 56, 56)
+                            .addComponent(jtf_NomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(32, 32, 32)
+                            .addComponent(jbt_Buscar))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(37, 37, 37)
+                            .addComponent(jbt_Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(61, 61, 61)
+                            .addComponent(jbt_Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(80, 80, 80)
+                            .addComponent(jbt_Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(48, 48, 48)
+                            .addComponent(jbt_Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,7 +373,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
                         .addComponent(jtf_NomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jbt_Buscar)))
                 .addGap(20, 20, 20)
-                .addComponent(jTabbedPane1_DadosPessoais, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtp_DadosPessoais, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jbt_Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -400,6 +397,16 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         // colocaque cada dados no clintee
         cliente.setCpf(jftf_Cpf.getText());
         cliente.setEmail(jftf_Email.getText());
+        cliente.setNome(jtf_NomeCompleto.getText());
+        cliente.setTelefone(jftf_Telefone.getText());
+        cliente.setEstadoCivil(bg_EstadoCivil.getSelection().getActionCommand());
+        // pegar os dados
+        cliente.getEnderco().setLogradouro(jtf_Lagradouro.getText());
+        cliente.getEnderco().setComplemento(jtf_Complemento.getText());
+        cliente.getEnderco().setCidade(jtf_Cidade.getText());
+        cliente.getEnderco().setEstado(jcb_Estado.getSelectedItem().toString());
+        cliente.getEnderco().setCep(jftf_Cep.getText());
+        
         formPrincipal.bdcliente.inserirCliente(cliente);
        
     }//GEN-LAST:event_jbt_CadastrarActionPerformed
@@ -428,6 +435,7 @@ public class CadastroDeCliente extends javax.swing.JFrame {
 
     private void jbt_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_LimparActionPerformed
         // TODO add your handling code here:
+        this.limparTela();
     }//GEN-LAST:event_jbt_LimparActionPerformed
 
     private void jtf_LagradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_LagradouroActionPerformed
@@ -449,6 +457,10 @@ public class CadastroDeCliente extends javax.swing.JFrame {
     private void jtf_NomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_NomeCompletoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtf_NomeCompletoActionPerformed
+
+    private void jbt_AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_AtualizarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbt_AtualizarActionPerformed
     
     
     // metodo de limpar tela
@@ -457,17 +469,15 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         jtf_Complemento.setText("");
         jtf_Lagradouro.setText("");
         jftf_Cep.setText("");
-       
+        bg_EstadoCivil.clearSelection();
         jftf_Cpf.setText("");
         jtf_NomeCompleto.setText("");
         jftf_Telefone.setText("");
         jftf_Email.setText("");
         
-               
+        jftf_Cpf.requestFocus();
+        jtp_DadosPessoais.setSelectedIndex(0);
         jcb_Estado.setSelectedIndex(-1);
-        
-        
-        jcb_Estado.setSelectedIndex(0);
 
     }
     /**
@@ -514,7 +524,6 @@ public class CadastroDeCliente extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRb_Solteiro;
     private javax.swing.JRadioButton jRb_UniaoEstavel;
     private javax.swing.JRadioButton jRb_Viuvo;
-    private javax.swing.JTabbedPane jTabbedPane1_DadosPessoais;
     private javax.swing.JLabel jbl_NomeCompleto;
     private javax.swing.JButton jbt_Atualizar;
     private javax.swing.JButton jbt_Buscar;
@@ -539,5 +548,6 @@ public class CadastroDeCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jtf_Complemento;
     private javax.swing.JTextField jtf_Lagradouro;
     private javax.swing.JTextField jtf_NomeCompleto;
+    private javax.swing.JTabbedPane jtp_DadosPessoais;
     // End of variables declaration//GEN-END:variables
 }
