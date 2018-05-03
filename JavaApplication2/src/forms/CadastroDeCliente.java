@@ -408,11 +408,14 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         cliente.getEnderco().setCep(jftf_Cep.getText());
         
         formPrincipal.bdcliente.inserirCliente(cliente);
+        JOptionPane.showMessageDialog(null, "Cliente cadastrador com sucesso! ");
+        this.limparTela();
        
     }//GEN-LAST:event_jbt_CadastrarActionPerformed
 
     private void jbt_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarActionPerformed
-         // pegar o cpf do campo
+         String cpf = jftf_Cpf.getText(); // pegar o valor do campo cpf
+         // pegar o cpf do campo do formulario principal
          Cliente cliente = formPrincipal.bdcliente.buscarCliente("cpf");
          if(cliente != null )
          {
