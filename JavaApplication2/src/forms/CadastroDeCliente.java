@@ -5,7 +5,9 @@
  */
 package forms;
 
+import java.util.Enumeration;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import model.Cliente;
 
 /**
@@ -422,6 +424,26 @@ public class CadastroDeCliente extends javax.swing.JFrame {
              // colocar cada dado do cliente em cada compo
              jftf_Cpf.setText(cliente.getCpf());
              jftf_Email.setText(cliente.getEmail());
+             
+             jtf_Lagradouro.setText(cliente.getEnderco().getLogradouro());
+             jtf_Complemento.setText(cliente.getEnderco().getComplemento());
+             jtf_Cidade.setText(cliente.getEnderco().getCidade());
+             jftf_Cep.setText(cliente.getEnderco().getCep());
+                
+             JRadioButton radio; 
+             Enumeration jr = bg_EstadoCivil.getElements(); 
+             while ( jr.hasMoreElements() ) 
+                {
+                    radio = (JRadioButton) jr.nextElement();
+                    if (radio.getText().equals(cliente.getEstadoCivil()))
+                        radio.setSelected(true);                                        
+                }               
+                
+             for(int i = 0; i< jcb_Estado.getItemCount();i++)
+                {
+                    if (jcb_Estado.getItemAt(i).equals(cliente.getEnderco().getEstado()))
+                        jcb_Estado.setSelectedIndex(i);                    
+                }  
          }
          else
          {
