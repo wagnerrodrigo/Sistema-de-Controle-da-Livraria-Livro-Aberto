@@ -5,6 +5,9 @@
  */
 package forms;
 
+import javax.swing.JOptionPane;
+import model.Cliente;
+
 /**
  *
  * @author wagner
@@ -61,9 +64,20 @@ public class ConsultaCliente extends javax.swing.JFrame {
 
         jbt_Excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icExcluir.png"))); // NOI18N
         jbt_Excluir.setText("Excluir");
+        jbt_Excluir.setEnabled(false);
+        jbt_Excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_ExcluirActionPerformed(evt);
+            }
+        });
 
         jbt_Sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icSair.png"))); // NOI18N
         jbt_Sair.setText("Sair");
+        jbt_Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_SairActionPerformed(evt);
+            }
+        });
 
         jta_AreaTxt.setColumns(20);
         jta_AreaTxt.setLineWrap(true);
@@ -122,7 +136,36 @@ public class ConsultaCliente extends javax.swing.JFrame {
 
     private void jbt_BuscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarClienteActionPerformed
         // TODO add your handling code here:
+        String cpf = jFTF_CPF.getText();
+        Cliente cliente = formPrincipal.bdcliente.buscarCliente(cpf);
+        if(cliente !=null)
+        {
+            jta_AreaTxt.setText(cliente.toString());
+            jbt_Excluir.setEnabled(true);       
+        }else
+            JOptionPane.showMessageDialog(null, "Cliente não encontrado");
+
     }//GEN-LAST:event_jbt_BuscarClienteActionPerformed
+
+    private void jbt_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_ExcluirActionPerformed
+        // TODO add your handling code here:
+        String cpf = jFTF_CPF.getText();
+        formPrincipal.bdcliente.removerCliente(cpf);
+        
+          jta_AreaTxt.setText("");
+          jFTF_CPF.setText("");
+          jFTF_CPF.requestFocus();
+            
+          // desablitar o botaon de exclir
+          jbt_Excluir.setEnabled(false);
+            
+          JOptionPane.showMessageDialog(null, "Cliente removido com sucesso", cpf, WIDTH);
+    }//GEN-LAST:event_jbt_ExcluirActionPerformed
+
+    private void jbt_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_SairActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jbt_SairActionPerformed
 
     /**
      * @param args the command line arguments
