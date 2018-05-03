@@ -422,8 +422,10 @@ public class CadastroDeCliente extends javax.swing.JFrame {
          if(cliente != null )
          {
              // colocar cada dado do cliente em cada compo
+             jtf_NomeCompleto.setText(cliente.getNome()); 
              jftf_Cpf.setText(cliente.getCpf());
              jftf_Email.setText(cliente.getEmail());
+             jftf_Telefone.setText(cliente.getTelefone());      
              
              jtf_Lagradouro.setText(cliente.getEnderco().getLogradouro());
              jtf_Complemento.setText(cliente.getEnderco().getComplemento());
