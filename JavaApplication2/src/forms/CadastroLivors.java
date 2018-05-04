@@ -219,10 +219,10 @@ public class CadastroLivors extends javax.swing.JFrame {
         Livro livro = null; //criando um livro
         for(int i=1; i<30; i++) // serão acrescentados 30 livros na base
         {
-            livro = new Livro();                    
-            livro.setCodigo(1000+i);
-            livro.setTitulo("Livro com Titulo " + i);
-            livro.setFornecedor("Editora " + i+10);
+            livro = new Livro();        // livro iniciado            
+            livro.setCodigo(1000+i); // codigo do livro sendo incrementado em sequencialmente pelo for
+            livro.setTitulo("Livro com Titulo " + i); // incrementando o titulo do livro pelo for
+            livro.setFornecedor("Editora " + i+10); // 
             livro.setQuantidadeEst((int)(Math.random() * 10)+ 10*i);
             livro.setValorUnitario((50%i) + (i*10));            
             livro.setData(i+"/05/"+(1990+i));
