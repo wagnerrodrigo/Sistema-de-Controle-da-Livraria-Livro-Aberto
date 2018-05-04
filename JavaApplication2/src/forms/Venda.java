@@ -36,7 +36,7 @@ public class Venda extends javax.swing.JFrame {
         jlb_PrintDataVenda = new javax.swing.JLabel();
         jftf_Cpf = new javax.swing.JFormattedTextField();
         jlb_Cpf = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jbt_BuscarCli = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jlb_PrintNomeCliente = new javax.swing.JLabel();
@@ -46,13 +46,13 @@ public class Venda extends javax.swing.JFrame {
         jlb_PrintTelefone = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jlb_PrintEmail = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        jbt_Confirmar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jtf_CodigoLivro = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        jbt_BuscarCodigoLivro = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jlb_PrintTitulo = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -61,10 +61,10 @@ public class Venda extends javax.swing.JFrame {
         jlb_PrintValorUnitario = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jtf_Quantidade = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        jbt_IncluirQuanti = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton5 = new javax.swing.JButton();
+        jbt_RemoverItem = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jlb_PrintValorTotal = new javax.swing.JLabel();
         jbt_FecharVenda = new javax.swing.JButton();
@@ -123,15 +123,15 @@ public class Venda extends javax.swing.JFrame {
 
         jlb_Cpf.setText("CPF:");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icBuscarCliente.png"))); // NOI18N
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbt_BuscarCli.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icBuscarCliente.png"))); // NOI18N
+        jbt_BuscarCli.setText("Buscar");
+        jbt_BuscarCli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbt_BuscarCliActionPerformed(evt);
             }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jLabel6.setText("Nome do Cliente:");
 
@@ -149,11 +149,11 @@ public class Venda extends javax.swing.JFrame {
 
         jlb_PrintEmail.setText("-");
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icConfirmarCliente.png"))); // NOI18N
-        jButton2.setText("Confirmar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jbt_Confirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icConfirmarCliente.png"))); // NOI18N
+        jbt_Confirmar.setText("Confirmar");
+        jbt_Confirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jbt_ConfirmarActionPerformed(evt);
             }
         });
 
@@ -179,7 +179,7 @@ public class Venda extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jlb_PrintEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jbt_Confirmar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -201,7 +201,7 @@ public class Venda extends javax.swing.JFrame {
                             .addComponent(jlb_PrintEmail)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jButton2)))
+                        .addComponent(jbt_Confirmar)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -213,11 +213,11 @@ public class Venda extends javax.swing.JFrame {
 
         jLabel7.setText("Codígo Livro:");
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icBuscarItem.png"))); // NOI18N
-        jButton3.setText("Buscar item");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jbt_BuscarCodigoLivro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icBuscarItem.png"))); // NOI18N
+        jbt_BuscarCodigoLivro.setText("Buscar item");
+        jbt_BuscarCodigoLivro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jbt_BuscarCodigoLivroActionPerformed(evt);
             }
         });
 
@@ -243,7 +243,7 @@ public class Venda extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jtf_CodigoLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(jbt_BuscarCodigoLivro)
                 .addGap(67, 67, 67)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
@@ -251,9 +251,7 @@ public class Venda extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlb_PrintEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(152, 152, 152)))
+                    .addComponent(jLabel9))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -271,7 +269,7 @@ public class Venda extends javax.swing.JFrame {
                         .addComponent(jlb_PrintTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3)
+                            .addComponent(jbt_BuscarCodigoLivro)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addComponent(jLabel7)
@@ -294,8 +292,8 @@ public class Venda extends javax.swing.JFrame {
 
         jtf_Quantidade.setText("-");
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icIncluirItem.png"))); // NOI18N
-        jButton4.setText("Incluir");
+        jbt_IncluirQuanti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icIncluirItem.png"))); // NOI18N
+        jbt_IncluirQuanti.setText("Incluir");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -318,8 +316,8 @@ public class Venda extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icRemoverItem.png"))); // NOI18N
-        jButton5.setText("Remover Item");
+        jbt_RemoverItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icRemoverItem.png"))); // NOI18N
+        jbt_RemoverItem.setText("Remover Item");
 
         jLabel12.setText("Valor Total : ");
 
@@ -351,7 +349,7 @@ public class Venda extends javax.swing.JFrame {
                                     .addComponent(jlb_Cpf)
                                     .addComponent(jftf_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(38, 38, 38)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jbt_BuscarCli, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addGroup(layout.createSequentialGroup()
@@ -359,7 +357,7 @@ public class Venda extends javax.swing.JFrame {
                                     .addComponent(jtf_Quantidade, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(40, 40, 40)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jbt_IncluirQuanti, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel12)
                                 .addGap(18, 18, 18)
@@ -367,7 +365,7 @@ public class Venda extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 971, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jbt_RemoverItem, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 5, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
@@ -390,7 +388,7 @@ public class Venda extends javax.swing.JFrame {
                         .addComponent(jlb_Cpf)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jftf_Cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1))
+                    .addComponent(jbt_BuscarCli))
                 .addGap(14, 14, 14)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -405,11 +403,11 @@ public class Venda extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jtf_Quantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton4))
+                    .addComponent(jbt_IncluirQuanti))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbt_RemoverItem, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
@@ -420,7 +418,7 @@ public class Venda extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jbt_Cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jbt_Sair)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -430,24 +428,29 @@ public class Venda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jftf_CpfActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbt_BuscarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarCliActionPerformed
         // TODO add your handling code here:
-        String cpf = jftf_Cpf.getText();
-        Cliente cliente = formPrincipal.bdcliente.buscarCliente("cpf");
+        String cpf = jftf_Cpf.getText(); // sera necessario???? 
+        Cliente cliente = formPrincipal.bdcliente.buscarCliente("cpf"); // como deixar o cliente como varialvel global.
         if(cliente !=null)
         {
             // colocar os dados em seu lugares!!
+            cliente.setNome(jlb_PrintNomeCliente.getText());
+            cliente.getEnderco().setLogradouro(jlb_PrintEndereco.getText());
+            cliente.setTelefone(jlb_PrintTelefone.getText());
+            cliente.setEmail(jlb_PrintEmail.getText());
         
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbt_BuscarCliActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jbt_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_ConfirmarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jbt_ConfirmarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jbt_BuscarCodigoLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarCodigoLivroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+       
+    }//GEN-LAST:event_jbt_BuscarCodigoLivroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -485,11 +488,6 @@ public class Venda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -507,8 +505,13 @@ public class Venda extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton jbt_BuscarCli;
+    private javax.swing.JButton jbt_BuscarCodigoLivro;
     private javax.swing.JButton jbt_Cancelar;
+    private javax.swing.JButton jbt_Confirmar;
     private javax.swing.JButton jbt_FecharVenda;
+    private javax.swing.JButton jbt_IncluirQuanti;
+    private javax.swing.JButton jbt_RemoverItem;
     private javax.swing.JButton jbt_Sair;
     private javax.swing.JFormattedTextField jftf_Cpf;
     private javax.swing.JLabel jlb_Cpf;

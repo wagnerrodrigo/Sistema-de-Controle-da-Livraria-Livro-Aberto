@@ -37,7 +37,7 @@
                                   <Component id="jftf_Cpf" alignment="0" min="-2" pref="152" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="155" max="-2" attributes="0"/>
+                              <Component id="jbt_BuscarCli" min="-2" pref="155" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -47,7 +47,7 @@
                                   <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="jButton4" min="-2" pref="144" max="-2" attributes="0"/>
+                              <Component id="jbt_IncluirQuanti" min="-2" pref="144" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
@@ -57,7 +57,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jScrollPane1" min="-2" pref="971" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" pref="183" max="-2" attributes="0"/>
+                              <Component id="jbt_RemoverItem" min="-2" pref="183" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
@@ -88,7 +88,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jftf_Cpf" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbt_BuscarCli" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -105,12 +105,12 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jtf_Quantidade" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbt_IncluirQuanti" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jScrollPane1" min="-2" pref="98" max="-2" attributes="0"/>
-                  <Component id="jButton5" min="-2" pref="57" max="-2" attributes="0"/>
+                  <Component id="jbt_RemoverItem" min="-2" pref="57" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -125,7 +125,7 @@
                       <Component id="jbt_Sair" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -209,7 +209,7 @@
         <Property name="text" type="java.lang.String" value="CPF:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jbt_BuscarCli">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/icones/icBuscarCliente.png"/>
@@ -217,13 +217,13 @@
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbt_BuscarCliActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
             <BevelBorder bevelType="1"/>
           </Border>
         </Property>
@@ -254,7 +254,7 @@
                       <Component id="jlb_PrintEmail" min="-2" pref="165" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jButton2" max="32767" attributes="0"/>
+                  <Component id="jbt_Confirmar" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -281,7 +281,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbt_Confirmar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="21" max="32767" attributes="0"/>
@@ -330,7 +330,7 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="jbt_Confirmar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/icones/icConfirmarCliente.png"/>
@@ -338,7 +338,7 @@
             <Property name="text" type="java.lang.String" value="Confirmar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbt_ConfirmarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -372,7 +372,7 @@
                       <Component id="jtf_CodigoLivro" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbt_BuscarCodigoLivro" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -381,10 +381,7 @@
                   <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jlb_PrintEditora" alignment="0" min="-2" pref="206" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="152" pref="152" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -407,7 +404,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jbt_BuscarCodigoLivro" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -444,7 +441,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jtf_CodigoLivro">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="jbt_BuscarCodigoLivro">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/icones/icBuscarItem.png"/>
@@ -452,7 +449,7 @@
             <Property name="text" type="java.lang.String" value="Buscar item"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbt_BuscarCodigoLivroActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
@@ -497,7 +494,7 @@
         <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="jbt_IncluirQuanti">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/icones/icIncluirItem.png"/>
@@ -559,7 +556,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="jbt_RemoverItem">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/icones/icRemoverItem.png"/>
