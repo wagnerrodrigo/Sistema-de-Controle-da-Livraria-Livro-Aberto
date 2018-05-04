@@ -397,9 +397,9 @@ public class CadastroDeCliente extends javax.swing.JFrame {
         // peguei os valores dos campos
         Cliente cliente = new Cliente();
         // colocaque cada dados no clintee
+        cliente.setNome(jtf_NomeCompleto.getText());
         cliente.setCpf(jftf_Cpf.getText());
         cliente.setEmail(jftf_Email.getText());
-        cliente.setNome(jtf_NomeCompleto.getText());
         cliente.setTelefone(jftf_Telefone.getText());
         cliente.setEstadoCivil(bg_EstadoCivil.getSelection().getActionCommand());
         // pegar os dados
