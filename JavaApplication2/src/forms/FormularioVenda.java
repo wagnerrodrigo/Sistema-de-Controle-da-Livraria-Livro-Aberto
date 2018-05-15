@@ -5,19 +5,36 @@
  */
 package forms;
 
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import model.Cliente;
+import model.Item;
+import model.Livro;
+import model.Venda;
 
 /**
  *
  * @author wagner
  */
-public class Venda extends javax.swing.JFrame {
+public class FormularioVenda extends javax.swing.JFrame {
 
     /**
-     * Creates new form Venda
+     * Creates new form FormularioVenda
      */
-    public Venda() {
-        initComponents();
+    
+    private Cliente cliente = null; // como deixar o cliente como varialvel global.
+    private Livro livro = null;
+    private Venda venda = null;
+    
+    float soma = 0;
+    DefaultTableModel modelo = null;
+    
+    public FormularioVenda() {
+        initComponents();        
+       venda = new Venda();
+       modelo = (DefaultTableModel)jTable1.getModel();
+        
     }
 
     /**
@@ -58,7 +75,7 @@ public class Venda extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jlb_PrintEditora = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jlb_PrintValorUnitario = new javax.swing.JLabel();
+        jlb_PrintValor = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jtf_Quantidade = new javax.swing.JTextField();
         jbt_IncluirQuanti = new javax.swing.JButton();
@@ -72,6 +89,11 @@ public class Venda extends javax.swing.JFrame {
         jbt_Sair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
@@ -213,6 +235,12 @@ public class Venda extends javax.swing.JFrame {
 
         jLabel7.setText("Codígo Livro:");
 
+        jtf_CodigoLivro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtf_CodigoLivroActionPerformed(evt);
+            }
+        });
+
         jbt_BuscarCodigoLivro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icBuscarItem.png"))); // NOI18N
         jbt_BuscarCodigoLivro.setText("Buscar item");
         jbt_BuscarCodigoLivro.addActionListener(new java.awt.event.ActionListener() {
@@ -229,9 +257,9 @@ public class Venda extends javax.swing.JFrame {
 
         jlb_PrintEditora.setText("-");
 
-        jLabel10.setText("Valor Unitário:");
+        jLabel10.setText("Valor");
 
-        jlb_PrintValorUnitario.setText("-");
+        jlb_PrintValor.setText("-");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -242,7 +270,7 @@ public class Venda extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jtf_CodigoLivro, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addComponent(jbt_BuscarCodigoLivro)
                 .addGap(67, 67, 67)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,10 +281,10 @@ public class Venda extends javax.swing.JFrame {
                     .addComponent(jlb_PrintEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(57, 57, 57)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jlb_PrintValorUnitario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(65, 65, 65))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlb_PrintValor, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +307,7 @@ public class Venda extends javax.swing.JFrame {
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel10)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jlb_PrintValorUnitario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(jlb_PrintValor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -294,6 +322,11 @@ public class Venda extends javax.swing.JFrame {
 
         jbt_IncluirQuanti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icIncluirItem.png"))); // NOI18N
         jbt_IncluirQuanti.setText("Incluir");
+        jbt_IncluirQuanti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_IncluirQuantiActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -318,6 +351,11 @@ public class Venda extends javax.swing.JFrame {
 
         jbt_RemoverItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icRemoverItem.png"))); // NOI18N
         jbt_RemoverItem.setText("Remover Item");
+        jbt_RemoverItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbt_RemoverItemActionPerformed(evt);
+            }
+        });
 
         jLabel12.setText("Valor Total : ");
 
@@ -431,26 +469,79 @@ public class Venda extends javax.swing.JFrame {
     private void jbt_BuscarCliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarCliActionPerformed
         // TODO add your handling code here:
         String cpf = jftf_Cpf.getText(); // sera necessario???? 
-        Cliente cliente = formPrincipal.bdcliente.buscarCliente("cpf"); // como deixar o cliente como varialvel global.
+        cliente = formPrincipal.bdcliente.buscarCliente(cpf);
+        
         if(cliente !=null)
         {
             // colocar os dados em seu lugares!!
             cliente.setNome(jlb_PrintNomeCliente.getText());
-            cliente.getEnderco().setLogradouro(jlb_PrintEndereco.getText());
+            cliente.getEnderco().setLogradouro(jlb_PrintEndereco.getText() +"" + cliente.getEnderco().getComplemento() );
             cliente.setTelefone(jlb_PrintTelefone.getText());
             cliente.setEmail(jlb_PrintEmail.getText());
-        
+            // o botão comfirmar ??? confirma o cliente local ou global ??
+        JOptionPane.showMessageDialog(null,"Cpf encontrado ");
         }
+        else
+            JOptionPane.showMessageDialog(null, "Cpf não encontrado por favor confirar os dados");
     }//GEN-LAST:event_jbt_BuscarCliActionPerformed
 
     private void jbt_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_ConfirmarActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
+         // pegar o cliente do medeto acima !!! 
+         // se os dados da interface for igual ao dados do cliente o botão de confirmar e liberado
+         //if(jbt_BuscarCli = formPrincipal.daoLivro.buscarLivro())
+         venda.setCliente(cliente);
+         jbt_Confirmar.setEnabled(false);
+         JOptionPane.showMessageDialog(null, "dados confirmados");
     }//GEN-LAST:event_jbt_ConfirmarActionPerformed
 
     private void jbt_BuscarCodigoLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_BuscarCodigoLivroActionPerformed
         // TODO add your handling code here:
-       
+        livro = formPrincipal.daoLivro.buscarLivro(Integer.parseInt(jtf_CodigoLivro.getText()));
+        if(livro != null)
+        {
+            jlb_PrintTitulo.setText(livro.getTitulo());
+            jlb_PrintEditora.setText(livro.getFornecedor());
+            jlb_PrintValor.setText("R$ "+ Float.toString(livro.getValorUnitario()));
+        }
+       String codigo = jtf_CodigoLivro.getText();
     }//GEN-LAST:event_jbt_BuscarCodigoLivroActionPerformed
+
+    private void jtf_CodigoLivroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtf_CodigoLivroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtf_CodigoLivroActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        jlb_PrintVenda.setText(Integer.toString(Venda.getNumero()));
+        
+        SimpleDateFormat fm = new SimpleDateFormat("dd/MM/yyyy");
+        String dt = fm.format(venda);
+        jlb_PrintDataVenda.setText(dt);
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jbt_IncluirQuantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_IncluirQuantiActionPerformed
+        // TODO add your handling code here:
+        int quantidade = Interger.parseInt(jtf_Quantidade);
+        if(quantidade !=0)
+        {   
+            Item it = new Item(livro);
+            it.setQuantidade(quantidade);
+            it.calcularValorItem();
+            
+            
+            modelo.addRow(new Object[]{livro.getCodigo(),livro.getTitulo(),quantidade,livor})
+            venda.inserirItem(it);
+            soma = soma + it.getValorItem();
+            jlb_PrintValorTotal.setText(Float.toString(soma));
+        }
+    }//GEN-LAST:event_jbt_IncluirQuantiActionPerformed
+
+    private void jbt_RemoverItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt_RemoverItemActionPerformed
+        // TODO add your handling code here:
+        int linha = jTable1.getSelectedRow();
+        int codigo = (Integer)jTable1.getModel().getValueAt(linha, linha)
+    }//GEN-LAST:event_jbt_RemoverItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -469,20 +560,21 @@ public class Venda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioVenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioVenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioVenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormularioVenda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Venda().setVisible(true);
+                new FormularioVenda().setVisible(true);
             }
         });
     }
@@ -523,8 +615,8 @@ public class Venda extends javax.swing.JFrame {
     private javax.swing.JLabel jlb_PrintNomeCliente;
     private javax.swing.JLabel jlb_PrintTelefone;
     private javax.swing.JLabel jlb_PrintTitulo;
+    private javax.swing.JLabel jlb_PrintValor;
     private javax.swing.JLabel jlb_PrintValorTotal;
-    private javax.swing.JLabel jlb_PrintValorUnitario;
     private javax.swing.JLabel jlb_PrintVenda;
     private javax.swing.JLabel jlb_Telefone;
     private javax.swing.JTextField jtf_CodigoLivro;

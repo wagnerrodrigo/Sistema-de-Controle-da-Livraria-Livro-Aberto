@@ -10,7 +10,7 @@ package model;
  * @author wagner
  */
 public class Item {
-    private Livro livro;
+    private Livro livro; // agregação
     private int numero;
     private float valorItem;
     private int quantidade;

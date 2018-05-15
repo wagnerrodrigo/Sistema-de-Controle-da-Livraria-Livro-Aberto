@@ -15,15 +15,15 @@ import java.util.List;
  */
 public class Venda {
     private static int numero = 0;
-    private Cliente cliente;
+    private Cliente cliente; // agregação
     private List<Item> lista;
     private float valorTotal;
-    private Date dataVenda;
+    private Date dataVenda; // SimplesDateFormat com 
 
     public Venda() {
         numero++;
         lista = new ArrayList<Item>(); // coleção de itens vacio 
-        dataVenda = new Date();
+        dataVenda = new Date();// a venda ja esta com a dada e a hora porque estou iniciando nesse momento
     }
     
     public void inserirItem(Item item)
